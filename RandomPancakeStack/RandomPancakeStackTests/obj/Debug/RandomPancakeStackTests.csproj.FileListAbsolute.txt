@@ -1,0 +1,7 @@
+D:\Development\Personal\ZenCoder\RandomPancakeStack\RandomPancakeStackTests\bin\Debug\RandomPancakeStackTests.dll
+D:\Development\Personal\ZenCoder\RandomPancakeStack\RandomPancakeStackTests\bin\Debug\RandomPancakeStackTests.pdb
+D:\Development\Personal\ZenCoder\RandomPancakeStack\RandomPancakeStackTests\bin\Debug\RandomPancakeStack.dll
+D:\Development\Personal\ZenCoder\RandomPancakeStack\RandomPancakeStackTests\bin\Debug\RandomPancakeStack.pdb
+D:\Development\Personal\ZenCoder\RandomPancakeStack\RandomPancakeStackTests\obj\Debug\RandomPancakeStackTests.csprojResolveAssemblyReference.cache
+D:\Development\Personal\ZenCoder\RandomPancakeStack\RandomPancakeStackTests\obj\Debug\RandomPancakeStackTests.dll
+D:\Development\Personal\ZenCoder\RandomPancakeStack\RandomPancakeStackTests\obj\Debug\RandomPancakeStackTests.pdb
