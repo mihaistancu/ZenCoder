@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 
 namespace Hangman
 {
@@ -11,29 +12,26 @@ namespace Hangman
             this.word = word;
         }
 
-        readonly List<char> goodGuesses = new List<char>();
-        readonly List<char> badGuesses = new List<char>();
+        readonly List<char> guessedLetters = new List<char>();
 
         public void Guess(char letter)
         {
-            if (word.IndexOf(letter) >= 0)
-            {
-                goodGuesses.Add(letter);
-            }
-            else
-            {
-                badGuesses.Add(letter);    
-            }
+            guessedLetters.Add(letter);
         }
 
-        public char[] GetGoodGuesses()
+        public IEnumerable<char> GetGoodGuesses()
         {
-            return goodGuesses.ToArray();
+            return guessedLetters.Where(WordContainsLetter);
         }
 
-        public char[] GetBadGuesses()
+        private bool WordContainsLetter(char letter)
         {
-            return badGuesses.ToArray();
+            return word.IndexOf(letter) >= 0;
+        }
+
+        public IEnumerable<char> GetBadGuesses()
+        {
+            return guessedLetters.Except(GetGoodGuesses());
         }
     }
 }
