@@ -44,6 +44,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="HangingProgress.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HangingProgress.Designer.cs">
+      <DependentUpon>HangingProgress.cs</DependentUpon>
+    </Compile>
     <Compile Include="IncorrectLetters.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -76,6 +82,9 @@
     <Compile Include="RevealedWord.Designer.cs">
       <DependentUpon>RevealedWord.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="HangingProgress.resx">
+      <DependentUpon>HangingProgress.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="IncorrectLetters.resx">
       <DependentUpon>IncorrectLetters.cs</DependentUpon>
     </EmbeddedResource>
