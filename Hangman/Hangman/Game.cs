@@ -19,19 +19,23 @@ namespace Hangman
             guessedLetters.Add(letter);
         }
 
-        public IEnumerable<char> GetGoodGuesses()
+        public Dictionary<int, char> GetHits()
         {
-            return guessedLetters.Where(WordContainsLetter);
+            var hits = new Dictionary<int, char>();
+
+            for (int i = 0; i < word.Length; i++)
+            {
+                if (guessedLetters.Contains(word[i]))
+                {
+                    hits[i] = word[i];
+                }
+            }
+            return hits;
         }
 
-        private bool WordContainsLetter(char letter)
+        public IEnumerable<char> GetMisses()
         {
-            return word.IndexOf(letter) >= 0;
-        }
-
-        public IEnumerable<char> GetBadGuesses()
-        {
-            return guessedLetters.Except(GetGoodGuesses());
+            return guessedLetters.Except(GetHits().Values);
         }
     }
 }
