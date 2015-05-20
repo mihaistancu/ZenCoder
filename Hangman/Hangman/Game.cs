@@ -6,5 +6,10 @@
         {
             
         }
+
+        public void Guess(char letter)
+        {
+            
+        }
     }
 }

@@ -10,5 +10,12 @@ namespace Hangman.Tests
         {
             var game = new Game("word");
         }
+
+        [TestMethod]
+        public void UserCanGuessALetter()
+        {
+            var game = new Game("word");
+            game.Guess('a');
+        }
     }
 }
