@@ -32,7 +32,7 @@
             this.incorrectLetters = new Hangman.UI.IncorrectLetters();
             this.remainingAttempts = new Hangman.UI.RemainingAttempts();
             this.revealedWord = new Hangman.UI.RevealedWord();
-            this.input = new Hangman.UI.LetterInput();
+            this.letterInput = new Hangman.UI.LetterInput();
             this.SuspendLayout();
             // 
             // hangingProgress1
@@ -73,14 +73,14 @@
             // 
             // input1
             // 
-            this.input.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            this.letterInput.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.input.BackColor = System.Drawing.SystemColors.Control;
-            this.input.Location = new System.Drawing.Point(13, 371);
-            this.input.Name = "input1";
-            this.input.Size = new System.Drawing.Size(480, 146);
-            this.input.TabIndex = 0;
-            this.input.Input += new System.Action<char>(this.OnInput);
+            this.letterInput.BackColor = System.Drawing.SystemColors.Control;
+            this.letterInput.Location = new System.Drawing.Point(13, 371);
+            this.letterInput.Name = "input1";
+            this.letterInput.Size = new System.Drawing.Size(480, 146);
+            this.letterInput.TabIndex = 0;
+            this.letterInput.Input += new System.Action<char>(this.OnInput);
             // 
             // Main
             // 
@@ -91,7 +91,7 @@
             this.Controls.Add(this.incorrectLetters);
             this.Controls.Add(this.remainingAttempts);
             this.Controls.Add(this.revealedWord);
-            this.Controls.Add(this.input);
+            this.Controls.Add(this.letterInput);
             this.MinimumSize = new System.Drawing.Size(523, 576);
             this.Name = "Main";
             this.Text = "Hangman";
@@ -101,7 +101,7 @@
 
         #endregion
 
-        private LetterInput input;
+        private LetterInput letterInput;
         private RevealedWord revealedWord;
         private RemainingAttempts remainingAttempts;
         private IncorrectLetters incorrectLetters;
