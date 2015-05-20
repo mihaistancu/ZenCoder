@@ -28,69 +28,70 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.hangingProgress1 = new Hangman.UI.HangingProgress();
-            this.incorrectLetters1 = new Hangman.UI.IncorrectLetters();
-            this.remainingAttempts1 = new Hangman.UI.RemainingAttempts();
-            this.revealedWord1 = new Hangman.UI.RevealedWord();
-            this.input1 = new Hangman.UI.LetterInput();
+            this.hangingProgress = new Hangman.UI.HangingProgress();
+            this.incorrectLetters = new Hangman.UI.IncorrectLetters();
+            this.remainingAttempts = new Hangman.UI.RemainingAttempts();
+            this.revealedWord = new Hangman.UI.RevealedWord();
+            this.input = new Hangman.UI.LetterInput();
             this.SuspendLayout();
             // 
             // hangingProgress1
             // 
-            this.hangingProgress1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.hangingProgress.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.hangingProgress1.Location = new System.Drawing.Point(13, 53);
-            this.hangingProgress1.Name = "hangingProgress1";
-            this.hangingProgress1.Size = new System.Drawing.Size(200, 210);
-            this.hangingProgress1.TabIndex = 4;
+            this.hangingProgress.Location = new System.Drawing.Point(13, 53);
+            this.hangingProgress.Name = "hangingProgress1";
+            this.hangingProgress.Size = new System.Drawing.Size(200, 210);
+            this.hangingProgress.TabIndex = 4;
             // 
             // incorrectLetters1
             // 
-            this.incorrectLetters1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            this.incorrectLetters.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.incorrectLetters1.Location = new System.Drawing.Point(13, 269);
-            this.incorrectLetters1.Name = "incorrectLetters1";
-            this.incorrectLetters1.Size = new System.Drawing.Size(480, 30);
-            this.incorrectLetters1.TabIndex = 3;
+            this.incorrectLetters.Location = new System.Drawing.Point(13, 269);
+            this.incorrectLetters.Name = "incorrectLetters1";
+            this.incorrectLetters.Size = new System.Drawing.Size(480, 30);
+            this.incorrectLetters.TabIndex = 3;
             // 
             // remainingAttempts1
             // 
-            this.remainingAttempts1.Location = new System.Drawing.Point(13, 12);
-            this.remainingAttempts1.Name = "remainingAttempts1";
-            this.remainingAttempts1.Size = new System.Drawing.Size(270, 35);
-            this.remainingAttempts1.TabIndex = 2;
+            this.remainingAttempts.Location = new System.Drawing.Point(13, 12);
+            this.remainingAttempts.Name = "remainingAttempts1";
+            this.remainingAttempts.Size = new System.Drawing.Size(270, 35);
+            this.remainingAttempts.TabIndex = 2;
             // 
             // revealedWord1
             // 
-            this.revealedWord1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            this.revealedWord.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.revealedWord1.AutoScroll = true;
-            this.revealedWord1.BackColor = System.Drawing.SystemColors.Control;
-            this.revealedWord1.Location = new System.Drawing.Point(13, 305);
-            this.revealedWord1.Name = "revealedWord1";
-            this.revealedWord1.Size = new System.Drawing.Size(480, 60);
-            this.revealedWord1.TabIndex = 1;
+            this.revealedWord.AutoScroll = true;
+            this.revealedWord.BackColor = System.Drawing.SystemColors.Control;
+            this.revealedWord.Location = new System.Drawing.Point(13, 305);
+            this.revealedWord.Name = "revealedWord1";
+            this.revealedWord.Size = new System.Drawing.Size(480, 60);
+            this.revealedWord.TabIndex = 1;
             // 
             // input1
             // 
-            this.input1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            this.input.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.input1.BackColor = System.Drawing.SystemColors.Control;
-            this.input1.Location = new System.Drawing.Point(13, 371);
-            this.input1.Name = "input1";
-            this.input1.Size = new System.Drawing.Size(480, 146);
-            this.input1.TabIndex = 0;
+            this.input.BackColor = System.Drawing.SystemColors.Control;
+            this.input.Location = new System.Drawing.Point(13, 371);
+            this.input.Name = "input1";
+            this.input.Size = new System.Drawing.Size(480, 146);
+            this.input.TabIndex = 0;
+            this.input.Input += new System.Action<char>(this.OnInput);
             // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(505, 529);
-            this.Controls.Add(this.hangingProgress1);
-            this.Controls.Add(this.incorrectLetters1);
-            this.Controls.Add(this.remainingAttempts1);
-            this.Controls.Add(this.revealedWord1);
-            this.Controls.Add(this.input1);
+            this.Controls.Add(this.hangingProgress);
+            this.Controls.Add(this.incorrectLetters);
+            this.Controls.Add(this.remainingAttempts);
+            this.Controls.Add(this.revealedWord);
+            this.Controls.Add(this.input);
             this.MinimumSize = new System.Drawing.Size(523, 576);
             this.Name = "Main";
             this.Text = "Hangman";
@@ -100,11 +101,11 @@
 
         #endregion
 
-        private LetterInput input1;
-        private RevealedWord revealedWord1;
-        private RemainingAttempts remainingAttempts1;
-        private IncorrectLetters incorrectLetters1;
-        private HangingProgress hangingProgress1;
+        private LetterInput input;
+        private RevealedWord revealedWord;
+        private RemainingAttempts remainingAttempts;
+        private IncorrectLetters incorrectLetters;
+        private HangingProgress hangingProgress;
 
     }
 }
