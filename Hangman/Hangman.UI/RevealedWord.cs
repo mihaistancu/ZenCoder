@@ -14,8 +14,8 @@ namespace Hangman.UI
 
         public void Set(Dictionary<int, char> hits)
         {
-            int length = hits.Keys.Max() + 1;
-            char[] letters = Enumerable.Repeat('_', length).ToArray();
+            int length = GetWordLength(hits);
+            char[] letters = GetPlaceHolders(length);
             
             foreach (var letterIndex in hits.Keys)
             {
@@ -23,6 +23,16 @@ namespace Hangman.UI
             }
 
             label.Text = String.Join(" ", letters);
+        }
+
+        private int GetWordLength(Dictionary<int, char> hits)
+        {
+            return hits.Keys.Max() + 1;
+        }
+
+        private char[] GetPlaceHolders(int length)
+        {
+            return Enumerable.Repeat('_', length).ToArray();
         }
     }
 }
