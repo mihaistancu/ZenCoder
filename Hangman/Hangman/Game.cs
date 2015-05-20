@@ -1,4 +1,6 @@
-﻿namespace Hangman
+﻿using System.Collections.Generic;
+
+namespace Hangman
 {
     public class Game
     {
@@ -7,9 +9,16 @@
             
         }
 
+        readonly List<char> goodGuesses = new List<char>();
+ 
         public void Guess(char letter)
         {
-            
+           goodGuesses.Add(letter); 
+        }
+
+        public char[] GetGoodGuesses()
+        {
+            return goodGuesses.ToArray();
         }
     }
 }
