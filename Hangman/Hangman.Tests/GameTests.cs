@@ -17,7 +17,6 @@ namespace Hangman.Tests
         [Test]
         public void GameCanProvideCorrectlyGuessedLetters()
         {
-            game.Guess('w');
             game.Guess('r');
             game.Guess('a');
             var correctLetters = game.GetHits();
@@ -27,7 +26,6 @@ namespace Hangman.Tests
         [Test]
         public void GameCanProvideWronglyGuessedLetters()
         {
-            game.Guess('w');
             game.Guess('a');
             game.Guess('b');
             var wrongLetters = game.GetMisses();
@@ -37,25 +35,21 @@ namespace Hangman.Tests
         [Test]
         public void GameInitiallyRevealsFirstAndLastLetter()
         {
-            CollectionAssert.AreEquivalent(new Dictionary<int, char> {{0, 'w'}, {3, 'd'}}, game.GetHits());
+            AssertHitsAre(new Dictionary<int, char> {{0, 'w'}, {3, 'd'}});
         }
 
         [Test]
         public void GameInitiallyRevealsAllLettersThatAreIdenticalToTheFirstLetter()
         {
             game = new Game("excellent");
-            CollectionAssert.AreEquivalent(
-                new Dictionary<int, char> {{0, 'e'}, {3, 'e'}, {6, 'e'}, {8, 't'}}, 
-                game.GetHits());
+            AssertHitsAre(new Dictionary<int, char> {{0, 'e'}, {3, 'e'}, {6, 'e'}, {8, 't'}});
         }
 
         [Test]
         public void GameInitiallyRevealsAllLettersThatAreIdenticalToTheLastLetter()
         {
             game = new Game("determine");
-            CollectionAssert.AreEquivalent(
-                new Dictionary<int, char> {{0, 'd'}, {1, 'e'}, {3, 'e'}, {8, 'e'}},
-                game.GetHits());
+            AssertHitsAre(new Dictionary<int, char> {{0, 'd'}, {1, 'e'}, {3, 'e'}, {8, 'e'}});
         }
 
         [Test]
@@ -63,9 +57,12 @@ namespace Hangman.Tests
         {
             game = new Game("cerebellum");
             game.Guess('e');
-            CollectionAssert.AreEquivalent(
-                new Dictionary<int, char> {{0, 'c'}, {1, 'e'}, {3, 'e'}, {5, 'e'}, {9, 'm'}},
-                game.GetHits());
+            AssertHitsAre(new Dictionary<int, char> {{0, 'c'}, {1, 'e'}, {3, 'e'}, {5, 'e'}, {9, 'm'}});
+        }
+
+        private void AssertHitsAre(Dictionary<int, char> hits)
+        {
+            CollectionAssert.AreEquivalent(hits, game.GetHits());
         }
     }
 }
