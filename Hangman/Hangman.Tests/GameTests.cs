@@ -25,10 +25,20 @@ namespace Hangman.Tests
             var game = new Game("word");
             game.Guess('w');
             game.Guess('o');
+            game.Guess('a');
             var correctLetters = game.GetGoodGuesses();
             CollectionAssert.AreEqual(correctLetters, new []{'w','o'});
         }
 
-
+        [TestMethod]
+        public void GameCanProvideWronglyGuessedLetters()
+        {
+            var game = new Game("word");
+            game.Guess('w');
+            game.Guess('a');
+            game.Guess('b');
+            var wrongLetters = game.GetBadGuesses();
+            CollectionAssert.AreEqual(wrongLetters, new []{'a','b'});
+        }
     }
 }
