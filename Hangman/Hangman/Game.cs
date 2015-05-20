@@ -10,13 +10,18 @@ namespace Hangman
         public Game(string word)
         {
             this.word = word;
+            Guess(word[0]);
+            Guess(word[word.Length - 1]);
         }
 
         readonly List<char> guessedLetters = new List<char>();
 
         public void Guess(char letter)
         {
-            guessedLetters.Add(letter);
+            if (!guessedLetters.Contains(letter))
+            {
+                guessedLetters.Add(letter);
+            }
         }
 
         public Dictionary<int, char> GetHits()
