@@ -60,9 +60,9 @@ namespace Hangman.Tests
             AssertHitsAre(new Dictionary<int, char> {{0, 'c'}, {1, 'e'}, {3, 'e'}, {5, 'e'}, {9, 'm'}});
         }
 
-        private void AssertHitsAre(Dictionary<int, char> hits)
+        private void AssertHitsAre(Dictionary<int, char> expectedHits)
         {
-            CollectionAssert.AreEquivalent(hits, game.GetHits());
+            CollectionAssert.AreEquivalent(expectedHits, game.GetHits());
         }
     }
 }

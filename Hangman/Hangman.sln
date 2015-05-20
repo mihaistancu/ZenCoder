@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hangman", "Hangman\Hangman.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hangman.Tests", "Hangman.Tests\Hangman.Tests.csproj", "{260AC48A-3021-4998-B212-AEEB742975B1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hangman.UI", "Hangman.UI\Hangman.UI.csproj", "{1EA7B649-3B21-4521-B51F-17904927FC06}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{260AC48A-3021-4998-B212-AEEB742975B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{260AC48A-3021-4998-B212-AEEB742975B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{260AC48A-3021-4998-B212-AEEB742975B1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1EA7B649-3B21-4521-B51F-17904927FC06}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1EA7B649-3B21-4521-B51F-17904927FC06}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1EA7B649-3B21-4521-B51F-17904927FC06}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1EA7B649-3B21-4521-B51F-17904927FC06}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
