@@ -1,6 +1,6 @@
 ﻿namespace Hangman.UI
 {
-    partial class Input
+    partial class LetterInput
     {
         /// <summary> 
         /// Required designer variable.

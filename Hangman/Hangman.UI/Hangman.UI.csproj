@@ -44,11 +44,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Input.cs">
+    <Compile Include="LetterInput.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Input.Designer.cs">
-      <DependentUpon>Input.cs</DependentUpon>
+    <Compile Include="LetterInput.Designer.cs">
+      <DependentUpon>LetterInput.cs</DependentUpon>
     </Compile>
     <Compile Include="Main.cs">
       <SubType>Form</SubType>
@@ -64,8 +64,8 @@
     <Compile Include="RevealedWord.Designer.cs">
       <DependentUpon>RevealedWord.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Input.resx">
-      <DependentUpon>Input.cs</DependentUpon>
+    <EmbeddedResource Include="LetterInput.resx">
+      <DependentUpon>LetterInput.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.cs</DependentUpon>

@@ -2,9 +2,9 @@
 
 namespace Hangman.UI
 {
-    public partial class Input : UserControl
+    public partial class LetterInput : UserControl
     {
-        public Input()
+        public LetterInput()
         {
             InitializeComponent();
         }

@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.input1 = new Hangman.UI.Input();
+            this.input1 = new Hangman.UI.LetterInput();
             this.revealedWord1 = new Hangman.UI.RevealedWord();
             this.SuspendLayout();
             // 
@@ -66,7 +66,7 @@
 
         #endregion
 
-        private Input input1;
+        private LetterInput input1;
         private RevealedWord revealedWord1;
 
     }
