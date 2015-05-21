@@ -25,6 +25,7 @@ namespace Hangman.UI
         private void UpdateScreen()
         {
             incorrectLetters.Set(game.GetMisses());
+            hangingProgress.Set(game.GetMisses().Count());
             remainingAttempts.Set(GetRemainingAttempts());
             revealedWord.Set(game.GetHits());
         }
