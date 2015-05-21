@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace Hangman
@@ -41,6 +42,11 @@ namespace Hangman
         public IEnumerable<char> GetMisses()
         {
             return guessedLetters.Except(GetHits().Values);
+        }
+
+        public bool IsWordGuessed()
+        {
+            return String.Concat(GetHits().Values) == word;
         }
     }
 }

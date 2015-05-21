@@ -1,4 +1,5 @@
-﻿using System.Windows.Forms;
+﻿using System;
+using System.Windows.Forms;
 
 namespace Hangman.UI
 {
@@ -11,6 +12,8 @@ namespace Hangman.UI
 
         public void Set(int remainingAttempts)
         {
+            remainingAttempts = Math.Max(0, remainingAttempts);
+
             label.Text = "Remaining attempts: " + remainingAttempts;
         }
     }

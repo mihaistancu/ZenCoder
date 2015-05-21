@@ -64,5 +64,13 @@ namespace Hangman.Tests
         {
             CollectionAssert.AreEquivalent(expectedHits, game.GetHits());
         }
+
+        [Test]
+        public void GameCanTellWhenWordIsGuessed()
+        {
+            game.Guess('o');
+            game.Guess('r');
+            Assert.IsTrue(game.IsWordGuessed());
+        }
     }
 }

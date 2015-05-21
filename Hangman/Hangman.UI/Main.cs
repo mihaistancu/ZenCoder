@@ -5,28 +5,49 @@ namespace Hangman.UI
 {
     public partial class Main : Form
     {
-        private readonly Game game;
+        private Game game;
         private const int AvailableAttempts = 6;
 
         public Main()
         {
             InitializeComponent();
-
-            game = new Game("SUPERCALIFRAGILISTICXPCALIDOCIA");
-            UpdateScreen();
+            StartNewGame();
         }
 
-        private void OnInput(char letter)
+        private void StartNewGame()
         {
-            game.Guess(letter);
+            game = new Game("SUPERCALIFRAGILISTICXPCALIDOCIOUS");
             UpdateScreen();
         }
 
         private void UpdateScreen()
         {
             incorrectLetters.Set(game.GetMisses());
-            remainingAttempts.Set(AvailableAttempts - game.GetMisses().Count());
+            remainingAttempts.Set(GetRemainingAttempts());
             revealedWord.Set(game.GetHits());
+        }
+
+        private int GetRemainingAttempts()
+        {
+            return AvailableAttempts - game.GetMisses().Count();
+        }
+
+        private void OnInput(char letter)
+        {
+            game.Guess(letter);
+            UpdateScreen();
+            
+            if (GetRemainingAttempts() < 0)
+            {
+                MessageBox.Show("CONDOLENCES");
+                StartNewGame();
+            }
+
+            if (game.IsWordGuessed())
+            {
+                MessageBox.Show("CONGRATULATIONS");
+                StartNewGame();
+            }
         }
     }
 }
