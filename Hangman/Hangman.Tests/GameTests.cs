@@ -20,7 +20,7 @@ namespace Hangman.Tests
             game.Guess('r');
             game.Guess('a');
             var correctLetters = game.GetHits();
-            CollectionAssert.AreEquivalent(new Dictionary<int, char> {{0, 'w'}, {2, 'r'}, {3, 'd'}}, correctLetters);
+            CollectionAssert.AreEquivalent(new Dictionary<int, char> {{0, 'W'}, {2, 'R'}, {3, 'D'}}, correctLetters);
         }
 
         [Test]
@@ -29,27 +29,27 @@ namespace Hangman.Tests
             game.Guess('a');
             game.Guess('b');
             var wrongLetters = game.GetMisses();
-            CollectionAssert.AreEqual(new []{'a','b'}, wrongLetters);
+            CollectionAssert.AreEqual(new []{'A','B'}, wrongLetters);
         }
 
         [Test]
         public void GameInitiallyRevealsFirstAndLastLetter()
         {
-            AssertHitsAre(new Dictionary<int, char> {{0, 'w'}, {3, 'd'}});
+            AssertHitsAre(new Dictionary<int, char> {{0, 'W'}, {3, 'D'}});
         }
 
         [Test]
         public void GameInitiallyRevealsAllLettersThatAreIdenticalToTheFirstLetter()
         {
             game = new Game("excellent");
-            AssertHitsAre(new Dictionary<int, char> {{0, 'e'}, {3, 'e'}, {6, 'e'}, {8, 't'}});
+            AssertHitsAre(new Dictionary<int, char> {{0, 'E'}, {3, 'E'}, {6, 'E'}, {8, 'T'}});
         }
 
         [Test]
         public void GameInitiallyRevealsAllLettersThatAreIdenticalToTheLastLetter()
         {
             game = new Game("determine");
-            AssertHitsAre(new Dictionary<int, char> {{0, 'd'}, {1, 'e'}, {3, 'e'}, {8, 'e'}});
+            AssertHitsAre(new Dictionary<int, char> {{0, 'D'}, {1, 'E'}, {3, 'E'}, {8, 'E'}});
         }
 
         [Test]
@@ -57,7 +57,7 @@ namespace Hangman.Tests
         {
             game = new Game("cerebellum");
             game.Guess('e');
-            AssertHitsAre(new Dictionary<int, char> {{0, 'c'}, {1, 'e'}, {3, 'e'}, {5, 'e'}, {9, 'm'}});
+            AssertHitsAre(new Dictionary<int, char> {{0, 'C'}, {1, 'E'}, {3, 'E'}, {5, 'E'}, {9, 'M'}});
         }
 
         private void AssertHitsAre(Dictionary<int, char> expectedHits)
@@ -71,6 +71,19 @@ namespace Hangman.Tests
             game.Guess('o');
             game.Guess('r');
             Assert.IsTrue(game.IsWordGuessed());
+        }
+
+        [Test]
+        public void GuessesAreCaseInsensitive()
+        {
+            game.Guess('O');
+            AssertHitsAre(new Dictionary<int, char> { { 0, 'W' }, { 1, 'O' }, { 3, 'D' } });
+        }
+
+        [Test]
+        public void GameCanReturnTheActualWord()
+        {
+            Assert.AreEqual("WORD", game.GetWord());
         }
     }
 }

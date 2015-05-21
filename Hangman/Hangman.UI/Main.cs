@@ -5,8 +5,9 @@ namespace Hangman.UI
 {
     public partial class Main : Form
     {
-        private Game game;
+        private readonly WordList wordList = new WordList();
         private const int AvailableAttempts = 6;
+        private Game game;
 
         public Main()
         {
@@ -16,7 +17,8 @@ namespace Hangman.UI
 
         private void StartNewGame()
         {
-            game = new Game("SUPERCALIFRAGILISTICXPCALIDOCIOUS");
+            string word = wordList.GetRandomWord();
+            game = new Game(word);
             UpdateScreen();
         }
 
@@ -39,7 +41,7 @@ namespace Hangman.UI
             
             if (GetRemainingAttempts() < 0)
             {
-                MessageBox.Show("CONDOLENCES");
+                MessageBox.Show("CONDOLENCES. The word you were looking for was: " + game.GetWord());
                 StartNewGame();
             }
 

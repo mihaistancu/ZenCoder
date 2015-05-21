@@ -10,7 +10,7 @@ namespace Hangman
 
         public Game(string word)
         {
-            this.word = word;
+            this.word = word.ToUpper();
             Guess(word[0]);
             Guess(word[word.Length - 1]);
         }
@@ -19,6 +19,8 @@ namespace Hangman
 
         public void Guess(char letter)
         {
+            letter = char.ToUpper(letter);
+
             if (!guessedLetters.Contains(letter))
             {
                 guessedLetters.Add(letter);
@@ -47,6 +49,11 @@ namespace Hangman
         public bool IsWordGuessed()
         {
             return String.Concat(GetHits().Values) == word;
+        }
+
+        public string GetWord()
+        {
+            return word;
         }
     }
 }

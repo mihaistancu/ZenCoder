@@ -82,6 +82,9 @@
     <Compile Include="RevealedWord.Designer.cs">
       <DependentUpon>RevealedWord.cs</DependentUpon>
     </Compile>
+    <Compile Include="WordList.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <EmbeddedResource Include="HangingProgress.resx">
       <DependentUpon>HangingProgress.cs</DependentUpon>
     </EmbeddedResource>
@@ -127,6 +130,11 @@
       <Project>{3E3A0A18-675A-4306-B8DD-757704B02EC8}</Project>
       <Name>Hangman</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="words.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
