@@ -1,23 +1,22 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using NUnit.Framework;
 
 namespace PokerHandsEvaluator
 {
-    [TestClass]
     public class HighCardTests
     {
         private Card[] firstHand;
         private Card[] secondHand;
         private PokerHandsEvaluator evaluator;
 
-        [TestInitialize]
+        [SetUp]
         public void Setup()
         {
-            firstHand = GetHighCardHand();
-            secondHand = GetHighCardHand();
+            firstHand = GetVeryBadHand();
+            secondHand = GetVeryBadHand();
             evaluator = new PokerHandsEvaluator();
         }
 
-        private Card[] GetHighCardHand()
+        private Card[] GetVeryBadHand()
         {
             return new []{
                 new Card(Rank.Two, Suit.Hearts),
@@ -28,19 +27,22 @@ namespace PokerHandsEvaluator
             };
         }
 
-        [TestMethod]
-        public void AnAceBeatsAKing()
+        [TestCase(Rank.Ace, Rank.King)]
+        [TestCase(Rank.King, Rank.Queen)]
+        [TestCase(Rank.Queen, Rank.Jack)]
+        [TestCase(Rank.Jack, Rank.Ten)]
+        [TestCase(Rank.Ten, Rank.Nine)]
+        [TestCase(Rank.Nine, Rank.Eight)]
+        [TestCase(Rank.Eight, Rank.Seven)]
+        [TestCase(Rank.Seven, Rank.Six)]
+        [TestCase(Rank.Six, Rank.Five)]
+        [TestCase(Rank.Five, Rank.Four)]
+        [TestCase(Rank.Four, Rank.Three)]
+        [TestCase(Rank.Three, Rank.Two)]
+        public void HighestRankWins(Rank firstHandHighCard, Rank secondHandHighCard)
         {
-            firstHand[0] = new Card(Rank.Ace, Suit.Clubs);
-            secondHand[0] = new Card(Rank.King, Suit.Diamonds);
-            Assert.AreEqual(1, evaluator.Compare(firstHand, secondHand));
-        }
-
-        [TestMethod]
-        public void AKingBeatsAQueen()
-        {
-            firstHand[0] = new Card(Rank.King, Suit.Clubs);
-            secondHand[0] = new Card(Rank.Queen, Suit.Diamonds);
+            firstHand[0] = new Card(firstHandHighCard, Suit.Clubs);
+            secondHand[0] = new Card(secondHandHighCard, Suit.Diamonds);
             Assert.AreEqual(1, evaluator.Compare(firstHand, secondHand));
         }
     }
