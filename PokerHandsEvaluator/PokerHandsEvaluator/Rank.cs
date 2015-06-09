@@ -1,8 +1,7 @@
 ﻿namespace PokerHandsEvaluator
 {
     public enum Rank
-    {
-        Ace,
+    {   
         Two,
         Three,
         Four,
@@ -14,6 +13,7 @@
         Ten,
         Jack,
         Queen,
-        King
+        King, 
+        Ace
     }
 }
