@@ -13,8 +13,7 @@ namespace PokerHandsEvaluator
         [TestCase("3c 8h 5s 6d 4h", "3s 5h 7h 6c 2d")]
         public void HighestRankWins(string firstHand, string secondHand)
         {
-            Setup(firstHand, secondHand);
-            AssertFirstHandWins();
+            AssertFirstHandWins(firstHand, secondHand);
         }
     }
 }
