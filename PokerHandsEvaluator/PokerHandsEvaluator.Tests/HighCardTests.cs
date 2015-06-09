@@ -2,18 +2,15 @@
 
 namespace PokerHandsEvaluator
 {
-    public class HighCardTests
+    public class HighCardTests: BaseTests
     {
-        private Card[] firstHand;
-        private Card[] secondHand;
-        private PokerHandsEvaluator evaluator;
-
         [SetUp]
-        public void Setup()
+        public override void Setup()
         {
+            base.Setup();
+
             firstHand = GetVeryBadHand();
             secondHand = GetVeryBadHand();
-            evaluator = new PokerHandsEvaluator();
         }
 
         private Card[] GetVeryBadHand()
@@ -43,9 +40,8 @@ namespace PokerHandsEvaluator
         {
             firstHand[0] = new Card(firstHandHighCard, Suit.Clubs);
             secondHand[0] = new Card(secondHandHighCard, Suit.Diamonds);
-            
-            Assert.AreEqual(1, evaluator.Compare(firstHand, secondHand));
-            Assert.AreEqual(-1, evaluator.Compare(secondHand, firstHand));
+
+            AssertFirstHandWins();
         }
     }
 }

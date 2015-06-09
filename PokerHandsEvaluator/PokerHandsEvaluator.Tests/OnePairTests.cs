@@ -2,18 +2,8 @@
 
 namespace PokerHandsEvaluator
 {
-    public class OnePairTests
+    public class OnePairTests: BaseTests
     {
-        private Card[] firstHand;
-        private Card[] secondHand;
-        private PokerHandsEvaluator evaluator;
-
-        [SetUp]
-        public void Setup()
-        {
-            evaluator = new PokerHandsEvaluator();
-        }
-
         private Card[] GetOnePairHand(Rank rank)
         {
             return new[]{
@@ -31,8 +21,7 @@ namespace PokerHandsEvaluator
             firstHand = GetOnePairHand(Rank.Ace);
             secondHand = GetOnePairHand(Rank.King);
 
-            Assert.AreEqual(1, evaluator.Compare(firstHand, secondHand));
-            Assert.AreEqual(-1, evaluator.Compare(secondHand, firstHand));
+            AssertFirstHandWins();
         }
     }
 }
