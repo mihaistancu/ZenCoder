@@ -4,43 +4,16 @@ namespace PokerHandsEvaluator
 {
     public class HighCardTests: BaseTests
     {
-        [SetUp]
-        public override void Setup()
+        [TestCase("Ah 3c 5s 6d 8h", "Kh 3s 5h 6c 8d")]
+        [TestCase("Kh 3c 5s 6d 8h", "Qh 3s 5h 6c 8d")]
+        [TestCase("Qh 3c 5s 6d 8h", "Jh 3s 5h 6c 8d")]
+        [TestCase("Jh 3c 5s 6d 8h", "0h 3s 5h 6c 8d")]
+        [TestCase("0h 3c 5s 6d 8h", "9h 3s 5h 6c 8d")]
+        [TestCase("9h 3c 5s 6d 8h", "8h 3s 5h 6c 4d")]
+        [TestCase("8h 3c 5s 6d 4h", "7h 3s 5h 6c 2d")]
+        public void HighestRankWins(string firstHand, string secondHand)
         {
-            base.Setup();
-
-            firstHand = GetVeryBadHand();
-            secondHand = GetVeryBadHand();
-        }
-
-        private Card[] GetVeryBadHand()
-        {
-            return new []{
-                new Card(Rank.Two, Suit.Hearts),
-                new Card(Rank.Three, Suit.Clubs),
-                new Card(Rank.Five, Suit.Spades),
-                new Card(Rank.Six, Suit.Diamonds),
-                new Card(Rank.Eight, Suit.Hearts)
-            };
-        }
-
-        [TestCase(Rank.Ace, Rank.King)]
-        [TestCase(Rank.King, Rank.Queen)]
-        [TestCase(Rank.Queen, Rank.Jack)]
-        [TestCase(Rank.Jack, Rank.Ten)]
-        [TestCase(Rank.Ten, Rank.Nine)]
-        [TestCase(Rank.Nine, Rank.Eight)]
-        [TestCase(Rank.Eight, Rank.Seven)]
-        [TestCase(Rank.Seven, Rank.Six)]
-        [TestCase(Rank.Six, Rank.Five)]
-        [TestCase(Rank.Five, Rank.Four)]
-        [TestCase(Rank.Four, Rank.Three)]
-        [TestCase(Rank.Three, Rank.Two)]
-        public void HighestRankWins(Rank firstHandHighCard, Rank secondHandHighCard)
-        {
-            firstHand[0] = new Card(firstHandHighCard, Suit.Clubs);
-            secondHand[0] = new Card(secondHandHighCard, Suit.Diamonds);
-
+            Setup(firstHand, secondHand);
             AssertFirstHandWins();
         }
     }

@@ -4,23 +4,10 @@ namespace PokerHandsEvaluator
 {
     public class OnePairTests: BaseTests
     {
-        private Card[] GetOnePairHand(Rank rank)
+        [TestCase("As Ac 5s 6d 8h", "Kc Kh 5c 6h 8d")]
+        public void HighestPairWins(string firstHand, string secondHand)
         {
-            return new[]{
-                new Card(rank, Suit.Hearts),
-                new Card(rank, Suit.Clubs),
-                new Card(Rank.Five, Suit.Spades),
-                new Card(Rank.Six, Suit.Diamonds),
-                new Card(Rank.Eight, Suit.Hearts)
-            };
-        }
-
-        [Test]
-        public void HighestPairWins()
-        {
-            firstHand = GetOnePairHand(Rank.Ace);
-            secondHand = GetOnePairHand(Rank.King);
-
+            Setup(firstHand, secondHand);
             AssertFirstHandWins();
         }
     }

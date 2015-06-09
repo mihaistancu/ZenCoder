@@ -56,6 +56,7 @@
     <Compile Include="BaseTests.cs" />
     <Compile Include="HighCardTests.cs" />
     <Compile Include="OnePairTests.cs" />
+    <Compile Include="PokerHand.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
