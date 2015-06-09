@@ -4,21 +4,28 @@ namespace PokerHandsEvaluator
 {
     public class BaseTests
     {
+        protected Card[] FirstHand;
+        protected Card[] SecondHand;
         protected PokerHandsEvaluator Evaluator;
 
         [SetUp]
-        public virtual void Setup()
+        public void Setup()
         {
             Evaluator = new PokerHandsEvaluator();
         }
 
-        public void AssertFirstHandWins(string firstHandSerialized, string secondHandSerialized)
+        protected void Setup(string firstHand, string secondHand)
         {
-            Card[] firstHand = PokerHand.Parse(firstHandSerialized);
-            Card[] secondHand = PokerHand.Parse(secondHandSerialized);
+            FirstHand = PokerHand.Parse(firstHand);
+            SecondHand = PokerHand.Parse(secondHand);
+        }
 
-            Assert.AreEqual(1, Evaluator.Compare(firstHand, secondHand));
-            Assert.AreEqual(-1, Evaluator.Compare(secondHand, firstHand));
+        protected void AssertFirstHandWins(string firstHand, string secondHand)
+        {
+            Setup(firstHand, secondHand);
+
+            Assert.AreEqual(1, Evaluator.Compare(FirstHand, SecondHand));
+            Assert.AreEqual(-1, Evaluator.Compare(SecondHand, FirstHand));
         }
     }
 }

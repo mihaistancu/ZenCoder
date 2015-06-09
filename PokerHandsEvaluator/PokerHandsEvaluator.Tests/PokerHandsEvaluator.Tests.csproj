@@ -54,6 +54,9 @@
   </Choose>
   <ItemGroup>
     <Compile Include="BaseTests.cs" />
+    <Compile Include="EqualCardsTests.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="HighCardTests.cs" />
     <Compile Include="OnePairTests.cs" />
     <Compile Include="PokerHand.cs" />
