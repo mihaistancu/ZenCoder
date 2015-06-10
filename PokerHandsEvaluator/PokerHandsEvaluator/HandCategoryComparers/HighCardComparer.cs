@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Linq;
 
-namespace PokerHandsEvaluator
+namespace PokerHandsEvaluator.HandCategoryComparers
 {
     class HighCardComparer: IHandCategoryComparer
     {

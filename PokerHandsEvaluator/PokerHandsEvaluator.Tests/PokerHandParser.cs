@@ -3,7 +3,7 @@ using System.Linq;
 
 namespace PokerHandsEvaluator
 {
-    public class PokerHand
+    public class PokerHandParser
     {
         private static readonly Dictionary<char, Rank> ranks = new Dictionary<char, Rank>
         {

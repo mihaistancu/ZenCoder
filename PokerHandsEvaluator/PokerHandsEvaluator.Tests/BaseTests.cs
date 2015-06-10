@@ -16,8 +16,8 @@ namespace PokerHandsEvaluator
 
         protected void Setup(string firstHand, string secondHand)
         {
-            FirstHand = PokerHand.Parse(firstHand);
-            SecondHand = PokerHand.Parse(secondHand);
+            FirstHand = PokerHandParser.Parse(firstHand);
+            SecondHand = PokerHandParser.Parse(secondHand);
         }
 
         protected void AssertFirstHandWins(string firstHand, string secondHand)

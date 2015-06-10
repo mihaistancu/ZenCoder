@@ -1,4 +1,4 @@
-﻿namespace PokerHandsEvaluator
+﻿namespace PokerHandsEvaluator.HandCategoryComparers
 {
     interface IHandCategoryComparer
     {
