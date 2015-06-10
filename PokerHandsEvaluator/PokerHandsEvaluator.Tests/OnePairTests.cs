@@ -9,5 +9,11 @@ namespace PokerHandsEvaluator
         {
             AssertFirstHandWins(firstHand, secondHand);
         }
+
+        [TestCase("2s 2c 5s 6d 8h", "Ac Kh 5c 6h 8d")]
+        public void PairsBeatHighCards(string firstHand, string secondHand)
+        {
+            AssertFirstHandWins(firstHand, secondHand);
+        }
     }
 }
