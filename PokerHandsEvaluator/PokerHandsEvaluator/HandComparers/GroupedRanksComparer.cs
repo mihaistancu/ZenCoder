@@ -1,24 +1,22 @@
 ﻿using System;
 using System.Linq;
 
-namespace PokerHandsEvaluator.HandCategoryComparers
+namespace PokerHandsEvaluator.HandComparers
 {
-    class GroupedRanksHandComparer: IHandCategoryComparer
+    class GroupedRanksComparer: HandComparer
     {
-        private readonly RanksComparer ranksComparer;
         private readonly int groupSize;
         private readonly int groupCount;
 
-        public GroupedRanksHandComparer(int groupSize, int groupCount)
+        public GroupedRanksComparer(int groupSize, int groupCount)
         {
-            ranksComparer = new RanksComparer();
             this.groupSize = groupSize;
             this.groupCount = groupCount;
         }
 
-        public int Compare(Card[] firstHand, Card[] secondHand)
+        public override int Compare(Card[] firstHand, Card[] secondHand)
         {
-            return ranksComparer.Compare(
+            return Compare(
                 GetGroupRanks(firstHand), 
                 GetGroupRanks(secondHand));
         }

@@ -2,11 +2,18 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace PokerHandsEvaluator.HandCategoryComparers
+namespace PokerHandsEvaluator.HandComparers
 {
-    public class RanksComparer
+    abstract class HandComparer
     {
-        public int Compare(Rank[] a, Rank[] b)
+        public abstract int Compare(Card[] firstHand, Card[] secondHand);
+
+        protected Rank[] GetRanks(Card[] hand)
+        {
+            return hand.Select(card => card.Rank).ToArray();
+        }
+
+        protected int Compare(Rank[] a, Rank[] b)
         {
             if (a.Length < b.Length)
             {
@@ -23,7 +30,7 @@ namespace PokerHandsEvaluator.HandCategoryComparers
                 .FirstOrDefault(result => result != 0);
         }
 
-        public IEnumerable<Rank> SortDescending(Rank[] ranks)
+        protected IEnumerable<Rank> SortDescending(Rank[] ranks)
         {
             return ranks.OrderByDescending(rank => rank);
         } 

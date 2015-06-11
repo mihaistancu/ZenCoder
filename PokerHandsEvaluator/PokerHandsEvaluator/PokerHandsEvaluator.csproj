@@ -40,12 +40,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Card.cs" />
-    <Compile Include="HandCategoryComparers\GroupedRanksHandComparer.cs">
+    <Compile Include="HandComparers\GroupedRanksComparer.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="HandCategoryComparers\HighCardComparer.cs" />
-    <Compile Include="HandCategoryComparers\IHandCategoryComparer.cs" />
-    <Compile Include="HandCategoryComparers\RanksComparer.cs" />
+    <Compile Include="HandComparers\HandComparer.cs" />
+    <Compile Include="HandComparers\HighCardComparer.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="PokerHandsEvaluator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Rank.cs" />
