@@ -1,33 +1,21 @@
-﻿using System;
-using System.Linq;
+﻿using System.Linq;
 
 namespace PokerHandsEvaluator.HandCategoryComparers
 {
     class HighCardComparer: IHandCategoryComparer
     {
+        private readonly RanksComparer ranksComparer = new RanksComparer();
+
         public int Compare(Card[] firstHand, Card[] secondHand)
         {
-            SortDescending(firstHand);
-            SortDescending(secondHand);
-
-            return firstHand.Zip(secondHand, Compare)
-                .FirstOrDefault(result => result != 0);
+            return ranksComparer.Compare(
+                GetRanks(firstHand),
+                GetRanks(secondHand));
         }
 
-        private void SortDescending(Card[] hand)
+        private Rank[] GetRanks(Card[] hand)
         {
-            Array.Sort(hand, Compare);
-            Array.Reverse(hand);
-        }
-
-        private int Compare(Card a, Card b)
-        {
-            return Compare(a.Rank, b.Rank);
-        }
-
-        private int Compare(Rank a, Rank b)
-        {
-            return Math.Sign(a - b);
+            return hand.Select(card => card.Rank).ToArray();
         }
     }
 }
