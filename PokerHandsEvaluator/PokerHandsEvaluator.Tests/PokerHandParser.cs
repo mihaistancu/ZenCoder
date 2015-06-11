@@ -16,7 +16,7 @@ namespace PokerHandsEvaluator
             {'7', Rank.Seven},
             {'8', Rank.Eight},
             {'9', Rank.Nine},
-            {'0', Rank.Ten},
+            {'T', Rank.Ten},
             {'J', Rank.Jack},
             {'Q', Rank.Queen},
             {'K', Rank.King}
