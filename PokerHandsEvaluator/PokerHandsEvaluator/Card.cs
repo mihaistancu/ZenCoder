@@ -1,4 +1,4 @@
-﻿namespace PokerHandsEvaluator
+﻿namespace Poker
 {
     public class Card
     {

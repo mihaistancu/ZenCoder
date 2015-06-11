@@ -1,8 +1,8 @@
 ﻿using System.Linq;
 
-namespace PokerHandsEvaluator.HandComparers
+namespace Poker.Hands
 {
-    class HighCardComparer: HandComparer
+    class HighCard: Hand
     {
         public override int Compare(Card[] firstHand, Card[] secondHand)
         {

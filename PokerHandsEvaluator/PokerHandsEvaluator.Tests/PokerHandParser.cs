@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 
-namespace PokerHandsEvaluator
+namespace Poker
 {
     public class PokerHandParser
     {

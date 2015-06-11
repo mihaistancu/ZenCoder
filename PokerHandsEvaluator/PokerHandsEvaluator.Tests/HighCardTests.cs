@@ -1,6 +1,6 @@
 ﻿using NUnit.Framework;
 
-namespace PokerHandsEvaluator
+namespace Poker
 {
     public class HighCardTests: BaseTests
     {

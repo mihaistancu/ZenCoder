@@ -7,7 +7,7 @@
     <ProjectGuid>{D568A0CD-0E50-4FC0-841E-328B631ACFE0}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>PokerHandsEvaluator</RootNamespace>
+    <RootNamespace>Poker</RootNamespace>
     <AssemblyName>PokerHandsEvaluator</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
@@ -40,15 +40,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Card.cs" />
-    <Compile Include="HandComparers\GroupedRanksComparer.cs">
+    <Compile Include="Hands\GroupedRanksHand.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="HandComparers\HandComparer.cs" />
-    <Compile Include="HandComparers\HighCardComparer.cs">
+    <Compile Include="Hands\Hand.cs" />
+    <Compile Include="Hands\HighCard.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="HandComparers\StraightComparer.cs" />
-    <Compile Include="PokerHandsEvaluator.cs" />
+    <Compile Include="Hands\Straight.cs" />
+    <Compile Include="Hands\Evaluator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Rank.cs" />
     <Compile Include="Suit.cs" />

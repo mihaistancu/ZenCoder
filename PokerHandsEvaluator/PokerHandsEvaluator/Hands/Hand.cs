@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace PokerHandsEvaluator.HandComparers
+namespace Poker.Hands
 {
-    abstract class HandComparer
+    abstract class Hand
     {
         public abstract int Compare(Card[] firstHand, Card[] secondHand);
 

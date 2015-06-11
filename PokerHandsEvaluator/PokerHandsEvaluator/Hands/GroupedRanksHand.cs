@@ -1,14 +1,13 @@
-﻿using System;
-using System.Linq;
+﻿using System.Linq;
 
-namespace PokerHandsEvaluator.HandComparers
+namespace Poker.Hands
 {
-    class GroupedRanksComparer: HandComparer
+    class GroupedRanksHand: Hand
     {
         private readonly int groupSize;
         private readonly int groupCount;
 
-        public GroupedRanksComparer(int groupSize, int groupCount)
+        public GroupedRanksHand(int groupSize, int groupCount)
         {
             this.groupSize = groupSize;
             this.groupCount = groupCount;

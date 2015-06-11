@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace PokerHandsEvaluator.HandComparers
+namespace Poker.Hands
 {
-    class StraightComparer: HighCardComparer
+    class Straight: HighCard
     {
         public override int Compare(Card[] firstHand, Card[] secondHand)
         {

@@ -1,17 +1,18 @@
 ﻿using NUnit.Framework;
+using Poker.Hands;
 
-namespace PokerHandsEvaluator
+namespace Poker
 {
     public class BaseTests
     {
         protected Card[] FirstHand;
         protected Card[] SecondHand;
-        protected PokerHandsEvaluator Evaluator;
+        protected Evaluator Evaluator;
 
         [SetUp]
         public void Setup()
         {
-            Evaluator = new PokerHandsEvaluator();
+            Evaluator = new Evaluator();
         }
 
         protected void Setup(string firstHand, string secondHand)

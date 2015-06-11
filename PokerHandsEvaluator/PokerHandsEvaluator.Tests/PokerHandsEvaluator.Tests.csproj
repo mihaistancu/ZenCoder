@@ -6,7 +6,7 @@
     <ProjectGuid>{BA19E77D-05CD-4CE0-B5CC-D8873316FD8C}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>PokerHandsEvaluator</RootNamespace>
+    <RootNamespace>Poker</RootNamespace>
     <AssemblyName>PokerHandsEvaluator.Tests</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
