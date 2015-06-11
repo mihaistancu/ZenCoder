@@ -27,10 +27,5 @@ namespace PokerHandsEvaluator.HandComparers
                 .Where(rank => hand.Count(card => card.Rank == rank) == groupSize)
                 .Take(groupCount).ToArray();
         }
-
-        private Rank[] GetRanks()
-        {
-            return (Rank[])Enum.GetValues(typeof(Rank));
-        }
     }
 }

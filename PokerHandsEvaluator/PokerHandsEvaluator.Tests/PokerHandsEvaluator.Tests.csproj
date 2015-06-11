@@ -61,6 +61,7 @@
     <Compile Include="OnePairTests.cs" />
     <Compile Include="PokerHandParser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StraightTests.cs" />
     <Compile Include="ThreeOfAKindTests.cs" />
     <Compile Include="TwoPairsTests.cs" />
   </ItemGroup>

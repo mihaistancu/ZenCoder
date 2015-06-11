@@ -10,6 +10,7 @@ namespace PokerHandsEvaluator
         readonly HandComparer onePairComparer = new GroupedRanksComparer(2, 1);
         readonly HandComparer twoPairsComparer = new GroupedRanksComparer(2, 2);
         readonly HandComparer threeOfAKindComparer = new GroupedRanksComparer(3, 1);
+        readonly HandComparer straightComparer = new StraightComparer();
         
         public int Compare(Card[] firstHand, Card[] secondHand)
         {
@@ -17,11 +18,12 @@ namespace PokerHandsEvaluator
                 .Select(comparer => comparer.Compare(firstHand, secondHand))
                 .FirstOrDefault(result => result != 0);
         }
-
+        
         private IEnumerable<HandComparer> GetComparers()
         {
             return new []
             {
+                straightComparer,
                 threeOfAKindComparer,
                 twoPairsComparer,
                 onePairComparer,

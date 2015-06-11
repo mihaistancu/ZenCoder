@@ -11,7 +11,7 @@ namespace PokerHandsEvaluator.HandComparers
                 GetRanks(secondHand));
         }
 
-        private Rank[] GetRanks(Card[] hand)
+        protected Rank[] GetRanks(Card[] hand)
         {
             return hand.Select(card => card.Rank).ToArray();
         }

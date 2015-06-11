@@ -8,31 +8,33 @@ namespace PokerHandsEvaluator.HandComparers
     {
         public abstract int Compare(Card[] firstHand, Card[] secondHand);
 
-        protected Rank[] GetRanks(Card[] hand)
+        public bool Matches()
         {
-            return hand.Select(card => card.Rank).ToArray();
+            return true;
         }
 
         protected int Compare(Rank[] a, Rank[] b)
         {
-            if (a.Length < b.Length)
-            {
-                return -1;
-            }
+            int result = a.Length.CompareTo(b.Length);
 
-            if (a.Length > b.Length)
+            if (result != 0)
             {
-                return 1;
+                return result;
             }
 
             return SortDescending(a)
-                .Zip(SortDescending(b), (x, y) => Math.Sign(x - y))
-                .FirstOrDefault(result => result != 0);
+                .Zip(SortDescending(b), (x, y) => x.CompareTo(y))
+                .FirstOrDefault(comparison => comparison != 0);
         }
 
-        protected IEnumerable<Rank> SortDescending(Rank[] ranks)
+        protected IEnumerable<Rank> SortDescending(IEnumerable<Rank> ranks)
         {
             return ranks.OrderByDescending(rank => rank);
-        } 
+        }
+
+        protected Rank[] GetRanks()
+        {
+            return (Rank[])Enum.GetValues(typeof(Rank));
+        }
     }
 }
