@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PokerHandsEvaluator.Tests",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PokerHandsEvaluator", "PokerHandsEvaluator\PokerHandsEvaluator.csproj", "{D568A0CD-0E50-4FC0-841E-328B631ACFE0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PokerHandsEvaluator.UI", "PokerHandsEvaluator.UI\PokerHandsEvaluator.UI.csproj", "{275681C2-EF40-4F40-9981-23E69E92D858}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{D568A0CD-0E50-4FC0-841E-328B631ACFE0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D568A0CD-0E50-4FC0-841E-328B631ACFE0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D568A0CD-0E50-4FC0-841E-328B631ACFE0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{275681C2-EF40-4F40-9981-23E69E92D858}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{275681C2-EF40-4F40-9981-23E69E92D858}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{275681C2-EF40-4F40-9981-23E69E92D858}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{275681C2-EF40-4F40-9981-23E69E92D858}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
