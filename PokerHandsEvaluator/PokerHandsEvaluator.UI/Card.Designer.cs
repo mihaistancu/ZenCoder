@@ -1,13 +1,13 @@
 ﻿namespace PokerHandsEvaluator.UI
 {
-    partial class Main
+    partial class Card
     {
-        /// <summary>
+        /// <summary> 
         /// Required designer variable.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
 
-        /// <summary>
+        /// <summary> 
         /// Clean up any resources being used.
         /// </summary>
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
@@ -20,23 +20,24 @@
             base.Dispose(disposing);
         }
 
-        #region Windows Form Designer generated code
+        #region Component Designer generated code
 
-        /// <summary>
-        /// Required method for Designer support - do not modify
+        /// <summary> 
+        /// Required method for Designer support - do not modify 
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent()
         {
             this.SuspendLayout();
             // 
-            // Main
+            // Card
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1003, 737);
-            this.Name = "Main";
-            this.Text = "Poker Hands Evaluator";
+            this.BackgroundImage = global::PokerHandsEvaluator.UI.Properties.Resources._2_of_clubs;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Name = "Card";
+            this.Size = new System.Drawing.Size(234, 340);
             this.ResumeLayout(false);
 
         }
@@ -44,4 +45,3 @@
         #endregion
     }
 }
-
