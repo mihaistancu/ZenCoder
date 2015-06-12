@@ -44,7 +44,6 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Hands\Flush.cs" />
-    <Compile Include="Hands\FullHouse.cs" />
     <Compile Include="Hands\GroupedRanksHand.cs">
       <SubType>Code</SubType>
     </Compile>

@@ -1,30 +1,36 @@
-﻿using System.Linq;
+﻿using System.Collections.Generic;
+using System.Linq;
 
 namespace Poker.Hands
 {
-    class GroupedRanksHand: Hand
+    class GroupedRanksHand: SpecialHighCard
     {
-        private readonly int groupSize;
-        private readonly int groupCount;
+        private readonly int[] expectedGroupLengths;
 
-        public GroupedRanksHand(int groupSize, int groupCount)
+        public GroupedRanksHand(int[] expectedGroupLengths)
         {
-            this.groupSize = groupSize;
-            this.groupCount = groupCount;
+            this.expectedGroupLengths = expectedGroupLengths;
         }
 
-        public override int Compare(Card[] firstHand, Card[] secondHand)
+        protected override bool Matches(Card[] hand)
         {
-            return Compare(
-                GetGroupRanks(firstHand), 
-                GetGroupRanks(secondHand));
+            return AreEqual(expectedGroupLengths, GetGroupLengths(hand));
         }
 
-        private Rank[] GetGroupRanks(Card[] hand)
+        private bool AreEqual(IEnumerable<int> a, IEnumerable<int> b)
         {
-            return GetRanks()
-                .Where(rank => hand.Count(card => card.Rank == rank) == groupSize)
-                .Take(groupCount).ToArray();
+            return Sort(a).SequenceEqual(Sort(b));
+        }
+
+        private IEnumerable<int> Sort(IEnumerable<int> values)
+        {
+            return values.OrderBy(value => value);
+        }
+
+        private IEnumerable<int> GetGroupLengths(Card[] hand)
+        {
+            return GetRanks(hand).Distinct()
+                .Select(rank => hand.Count(card => card.Rank == rank));
         }
     }
 }
