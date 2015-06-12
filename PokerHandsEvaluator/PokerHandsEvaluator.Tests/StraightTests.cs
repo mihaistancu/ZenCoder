@@ -4,7 +4,7 @@ namespace Poker
 {
     public class StraightTests: BaseTests
     {
-        [TestCase("As Ac As Qd 8h", "Qc Kh Kc Kh 8d")]
+        [TestCase("7s 9c 8s 5d 6h", "3c 4h 2c 6h 5d")]
         public void HighestStraightWins(string firstHand, string secondHand)
         {
             AssertFirstHandWins(firstHand, secondHand);

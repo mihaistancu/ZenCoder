@@ -7,12 +7,7 @@ namespace Poker.Hands
     abstract class Hand
     {
         public abstract int Compare(Card[] firstHand, Card[] secondHand);
-
-        public bool Matches()
-        {
-            return true;
-        }
-
+        
         protected int Compare(Rank[] a, Rank[] b)
         {
             int result = a.Length.CompareTo(b.Length);

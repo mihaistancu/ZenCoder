@@ -5,11 +5,13 @@ namespace Poker.Hands
 {
     public class Evaluator
     {
-        readonly Hand highCardComparer = new HighCard();
-        readonly Hand onePairComparer = new GroupedRanksHand(2, 1);
-        readonly Hand twoPairsComparer = new GroupedRanksHand(2, 2);
-        readonly Hand threeOfAKindComparer = new GroupedRanksHand(3, 1);
-        readonly Hand straightComparer = new Straight();
+        readonly Hand highCard = new HighCard();
+        readonly Hand onePair = new GroupedRanksHand(2, 1);
+        readonly Hand twoPairs = new GroupedRanksHand(2, 2);
+        readonly Hand threeOfAKind = new GroupedRanksHand(3, 1);
+        readonly Hand straight = new Straight();
+        readonly Hand flush = new Flush();
+        readonly Hand fullHouse = new FullHouse();
         
         public int Compare(Card[] firstHand, Card[] secondHand)
         {
@@ -22,11 +24,13 @@ namespace Poker.Hands
         {
             return new []
             {
-                straightComparer,
-                threeOfAKindComparer,
-                twoPairsComparer,
-                onePairComparer,
-                highCardComparer
+                fullHouse,
+                flush,
+                straight,
+                threeOfAKind,
+                twoPairs,
+                onePair,
+                highCard
             };
         }  
     }

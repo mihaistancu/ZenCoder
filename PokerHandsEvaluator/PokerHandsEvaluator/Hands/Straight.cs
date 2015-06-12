@@ -4,19 +4,9 @@ using System.Linq;
 
 namespace Poker.Hands
 {
-    class Straight: HighCard
+    class Straight: SpecialHighCard
     {
-        public override int Compare(Card[] firstHand, Card[] secondHand)
-        {
-            if (Matches(firstHand) && Matches(secondHand))
-            {
-                return base.Compare(firstHand, secondHand);
-            }
-
-            return Matches(firstHand).CompareTo(Matches(secondHand));
-        }
-
-        private bool Matches(Card[] hand)
+        protected override bool Matches(Card[] hand)
         {   
             var ranks = GetRanks(hand);
 

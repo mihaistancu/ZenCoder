@@ -57,6 +57,8 @@
     <Compile Include="EqualCardsTests.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="FlushTests.cs" />
+    <Compile Include="FullHouseTests.cs" />
     <Compile Include="HighCardTests.cs" />
     <Compile Include="OnePairTests.cs" />
     <Compile Include="PokerHandParser.cs" />
