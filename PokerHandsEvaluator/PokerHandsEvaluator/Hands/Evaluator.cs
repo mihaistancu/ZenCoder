@@ -17,6 +17,7 @@ namespace Poker.Hands
             return new IHand[]
             {
                 new StraightFlush(),
+                new BabyStraightFlush(),
                 new RankPattern(new[] {4, 1}),
                 new RankPattern(new[] {2, 3}),
                 new Flush(),

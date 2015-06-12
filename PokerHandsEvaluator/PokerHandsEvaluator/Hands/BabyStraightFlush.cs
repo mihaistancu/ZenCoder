@@ -1,6 +1,6 @@
 ﻿namespace Poker.Hands
 {
-    internal class StraightFlush: Straight
+    class BabyStraightFlush: BabyStraight
     {
         private readonly Flush flush = new Flush();
 
