@@ -3,7 +3,7 @@ using System.Linq;
 
 namespace Poker.Hands
 {
-    class Flush: SpecialHighCard
+    class Flush: Pattern
     {
         protected override bool Matches(Card[] hand)
         {

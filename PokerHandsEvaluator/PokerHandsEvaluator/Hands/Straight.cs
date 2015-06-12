@@ -4,7 +4,7 @@ using System.Linq;
 
 namespace Poker.Hands
 {
-    class Straight: SpecialHighCard
+    class Straight: Pattern
     {
         protected override bool Matches(Card[] hand)
         {   
@@ -28,6 +28,11 @@ namespace Poker.Hands
         {
             int startIndex = Array.IndexOf(GetRanks(), startRank);
             return GetRanks().Skip(startIndex).Take(5);
+        }
+
+        protected Rank[] GetRanks()
+        {
+            return (Rank[])Enum.GetValues(typeof(Rank));
         }
     }
 }

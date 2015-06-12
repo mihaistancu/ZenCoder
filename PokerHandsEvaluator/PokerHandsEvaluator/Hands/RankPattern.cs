@@ -3,11 +3,11 @@ using System.Linq;
 
 namespace Poker.Hands
 {
-    class GroupedRanksHand: SpecialHighCard
+    class RankPattern: Pattern
     {
         private readonly int[] expectedGroupLengths;
 
-        public GroupedRanksHand(int[] expectedGroupLengths)
+        public RankPattern(int[] expectedGroupLengths)
         {
             this.expectedGroupLengths = expectedGroupLengths;
         }

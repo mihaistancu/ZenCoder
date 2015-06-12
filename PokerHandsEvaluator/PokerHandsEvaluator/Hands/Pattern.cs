@@ -1,6 +1,6 @@
 ﻿namespace Poker.Hands
 {
-    abstract class SpecialHighCard: HighCard
+    abstract class Pattern: HighCard
     {
         public override int Compare(Card[] firstHand, Card[] secondHand)
         {

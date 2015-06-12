@@ -44,14 +44,16 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Hands\Flush.cs" />
-    <Compile Include="Hands\GroupedRanksHand.cs">
+    <Compile Include="Hands\IHand.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Hands\Hand.cs" />
+    <Compile Include="Hands\RankPattern.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Hands\HighCard.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Hands\SpecialHighCard.cs" />
+    <Compile Include="Hands\Pattern.cs" />
     <Compile Include="Hands\Straight.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Rank.cs" />
