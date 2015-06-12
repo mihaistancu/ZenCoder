@@ -55,6 +55,7 @@
     </Compile>
     <Compile Include="Hands\Pattern.cs" />
     <Compile Include="Hands\Straight.cs" />
+    <Compile Include="Hands\StraightFlush.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Rank.cs" />
     <Compile Include="Suit.cs" />

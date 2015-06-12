@@ -4,9 +4,9 @@ using System.Linq;
 
 namespace Poker.Hands
 {
-    class Straight: Pattern
+    internal class Straight: Pattern
     {
-        protected override bool Matches(Card[] hand)
+        internal override bool Matches(Card[] hand)
         {   
             var ranks = GetRanks(hand);
 

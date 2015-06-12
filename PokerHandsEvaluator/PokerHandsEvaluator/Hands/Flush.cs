@@ -3,9 +3,9 @@ using System.Linq;
 
 namespace Poker.Hands
 {
-    class Flush: Pattern
+    internal class Flush: Pattern
     {
-        protected override bool Matches(Card[] hand)
+        internal override bool Matches(Card[] hand)
         {
             return GetSuits(hand).Distinct().Count() == 1;
         }

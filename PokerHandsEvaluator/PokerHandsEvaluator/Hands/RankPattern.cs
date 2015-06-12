@@ -3,7 +3,7 @@ using System.Linq;
 
 namespace Poker.Hands
 {
-    class RankPattern: Pattern
+    internal class RankPattern: Pattern
     {
         private readonly int[] expectedGroupLengths;
 
@@ -12,7 +12,7 @@ namespace Poker.Hands
             this.expectedGroupLengths = expectedGroupLengths;
         }
 
-        protected override bool Matches(Card[] hand)
+        internal override bool Matches(Card[] hand)
         {
             return AreEqual(expectedGroupLengths, GetGroupLengths(hand));
         }

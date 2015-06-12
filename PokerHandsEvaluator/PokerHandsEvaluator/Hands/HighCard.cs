@@ -3,7 +3,7 @@ using System.Linq;
 
 namespace Poker.Hands
 {
-    class HighCard: IHand
+    internal class HighCard: IHand
     {
         public virtual int Compare(Card[] firstHand, Card[] secondHand)
         {

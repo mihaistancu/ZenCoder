@@ -1,6 +1,6 @@
 ﻿namespace Poker.Hands
 {
-    abstract class Pattern: HighCard
+    internal abstract class Pattern: HighCard
     {
         public override int Compare(Card[] firstHand, Card[] secondHand)
         {
@@ -12,6 +12,6 @@
             return Matches(firstHand).CompareTo(Matches(secondHand));
         }
 
-        protected abstract bool Matches(Card[] hand);
+        internal abstract bool Matches(Card[] hand);
     }
 }
