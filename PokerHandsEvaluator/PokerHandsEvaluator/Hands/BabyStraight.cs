@@ -6,10 +6,10 @@ namespace Poker.Hands
     {
         internal override bool Matches(Card[] hand)
         {
-            return AreEqual(GetRanks(hand), GetBabyStraight());
+            return AreEqual(GetRanks(hand), GetBabyStraightRanks());
         }
 
-        private IEnumerable<Rank> GetBabyStraight()
+        private IEnumerable<Rank> GetBabyStraightRanks()
         {
             return new[] { Rank.Ace, Rank.Two, Rank.Three, Rank.Four, Rank.Five };
         }

@@ -10,7 +10,7 @@ namespace Poker.Hands
         {
             var ranks = GetRanks(hand);
 
-            return AreEqual(ranks, GetStraightStartingAt(ranks.Min()));
+            return AreEqual(ranks, GetStraightRanksStartingAt(ranks.Min()));
         }
 
         protected bool AreEqual(IEnumerable<Rank> a, IEnumerable<Rank> b)
@@ -18,7 +18,7 @@ namespace Poker.Hands
             return SortDescending(a).SequenceEqual(SortDescending(b));
         }
 
-        private IEnumerable<Rank> GetStraightStartingAt(Rank startRank)
+        private IEnumerable<Rank> GetStraightRanksStartingAt(Rank startRank)
         {
             int startIndex = Array.IndexOf(GetRanks(), startRank);
             return GetRanks().Skip(startIndex).Take(5);
