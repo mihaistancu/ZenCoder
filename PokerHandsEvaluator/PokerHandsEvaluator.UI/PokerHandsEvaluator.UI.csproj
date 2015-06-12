@@ -243,6 +243,12 @@
   <ItemGroup>
     <None Include="Resources\queen_of_spades.png" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\PokerHandsEvaluator\PokerHandsEvaluator.csproj">
+      <Project>{D568A0CD-0E50-4FC0-841E-328B631ACFE0}</Project>
+      <Name>PokerHandsEvaluator</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
