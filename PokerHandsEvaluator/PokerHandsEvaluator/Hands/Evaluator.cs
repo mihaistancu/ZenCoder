@@ -21,6 +21,7 @@ namespace Poker.Hands
                 new RankPattern(new[] {2, 3}),
                 new Flush(),
                 new Straight(),
+                new BabyStraight(),
                 new RankPattern(new[] {3, 1, 1}),
                 new RankPattern(new[] {2, 2, 1}),
                 new RankPattern(new[] {2, 1, 1, 1}),
