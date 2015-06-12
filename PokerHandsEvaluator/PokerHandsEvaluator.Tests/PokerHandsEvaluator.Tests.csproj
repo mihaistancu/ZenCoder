@@ -58,6 +58,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="FlushTests.cs" />
+    <Compile Include="FourOfAKindTests.cs" />
     <Compile Include="FullHouseTests.cs" />
     <Compile Include="HighCardTests.cs" />
     <Compile Include="OnePairTests.cs" />
