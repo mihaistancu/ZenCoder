@@ -9,6 +9,8 @@ namespace PokerHandsEvaluator.UI
 {
     public partial class Card : UserControl
     {
+        public event Action Moved;
+
         public Card()
         {
             InitializeComponent();
@@ -79,6 +81,11 @@ namespace PokerHandsEvaluator.UI
 
             dragging = false;
             Capture = false;
+
+            if (Moved != null)
+            {
+                Moved();
+            }
         }
 
         protected override void OnMouseMove(MouseEventArgs mouseEventArgs)
